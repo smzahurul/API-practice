@@ -16,6 +16,7 @@
         fetch('https://jsonplaceholder.typicode.com/users')
             .then(response => response.json())
             .then(json => displayUser(json))
+            .catch(error => console.log(error));
 
         function displayUser(users) {
             // console.log("User", users);
@@ -27,6 +28,7 @@
                 const li = document.createElement("li");
                 li.innerText = user;
                 ul.appendChild(li);
+                ul.style.listStyle = "upper-number";
 
             }
         }
